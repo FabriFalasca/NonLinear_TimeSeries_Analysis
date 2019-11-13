@@ -76,8 +76,9 @@ def recurrenceEntropyFAST(timeSeries, eps,n,sampleSize):
         # Bounds
         a = random.randint(0, dimT-n)
         b = random.randint(0, dimT-n)
-        # Consider 4 consecutive times  t(n),t(n+1),t(n+2),t(n+3)
-        # Choose the randomly. Then do the same t(n),t(n+1),t(n+2),t(n+3)
+        # Consider n consecutive times  t(a),t(a+1),t(a+2),...,t(a+n)
+        # Choose the randomly. Then do the same t(b),t(b+1),t(b+2),...,t(b+n)
+        # With a,b \in [0,dimT-n]
         # All distances between all points in the time series
         d = cdist(timeSeries[a:a+n,None],timeSeries[b:b+n,None],metric='euclidean')
         # Heaviside function
