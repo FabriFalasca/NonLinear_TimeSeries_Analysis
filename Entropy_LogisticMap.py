@@ -6,8 +6,6 @@ Created on Tue Nov 12 17:10:06 2019
 @author: fabrizio
 """
 
-# I test the dependence on Epsilon
-
 # Recurrence Entropy
 # Entropy from recurrence matrix microstates
 
