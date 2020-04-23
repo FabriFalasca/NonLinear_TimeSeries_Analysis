@@ -61,7 +61,7 @@ def recurrenceEntropy(timeSeries, eps,n,sampleSize):
 
 
 
-# Function to compute the recurrence entropy in a faster way
+# (Fast) Function to compute the recurrence entropy in a faster way
 # Instead of computing the RP, I compute directly the microstates.
 def recurrenceEntropyFAST(timeSeries, eps,n,sampleSize):
     # dimension of a microstate: n^2
@@ -128,104 +128,3 @@ def recurrenceEntropyField(field,epsilonField,n,sampleSize):
 
     return entropyField
 
-
-'''
-# Function to compute the recurrence entropy over an entire field
-# This one is coded in order to test differences in results giving a different epsilon
-# It compute epsilon as a percentage of the standard deviation of the time series
-# and it takes as input the percentage
-def recurrenceEntropyField(field,n,sampleSize):
-
-    # Dimensions of the field?
-    # Time dimension
-    dimTime = np.shape(field)[0]
-    # Number of points in latitude (y-axis)
-    dimLat = np.shape(field)[1]
-    # Number of points in longitude (x-axis)
-    dimLon = np.shape(field)[2]
-
-    # Initialize the entropy field
-    entropyField = np.zeros([dimLat,dimLon])
-    normalizedEntropyField = np.zeros([dimLat,dimLon])
-
-    for i in range(0,dimLat):
-        for j in range(0,dimLon):
-            # Check if is a masked value
-            if np.isnan(field[0,i,j]):
-                entropyField[i,j] = field[0,i,j] # if it is mask just return the mask
-            else:
-                # Compute epsilon as x percentage of standard dev of the time series
-                diameter = np.abs(np.max(field[:,i,j]) - np.min(field[:,i,j]))
-                eps = 0.05 * diameter
-                entropyField[i,j] = recurrenceEntropy(field[:,i,j],eps,n,sampleSize)[0]
-
-    return entropyField
- '''
-
-'''
-# Here if interested in performing some tests
-
-# Function to compute the recurrence entropy over an entire field
-# This one is coded in order to test differences in results giving a different epsilon
-# It compute epsilon as a percentage of the standard deviation of the time series
-# and it takes as input the percentage
-def recurrenceEntropyFieldTestingEpsilon(field,percentage,n,sampleSize):
-
-    # Dimensions of the field?
-    # Time dimension
-    dimTime = np.shape(field)[0]
-    # Number of points in latitude (y-axis)
-    dimLat = np.shape(field)[1]
-    # Number of points in longitude (x-axis)
-    dimLon = np.shape(field)[2]
-
-    # Initialize the entropy field
-    entropyField = np.zeros([dimLat,dimLon])
-    normalizedEntropyField = np.zeros([dimLat,dimLon])
-
-    for i in range(0,dimLat):
-        for j in range(0,dimLon):
-            # Check if is a masked value
-            if np.isnan(field[0,i,j]):
-                entropyField[i,j] = field[0,i,j] # if it is mask just return the mask
-            else:
-                # Compute epsilon as x percentage of standard dev of the time series
-                std =np.std(field[:,i,j], ddof = 1)
-                eps = percentage * std
-                entropyField[i,j] = recurrenceEntropy(field[:,i,j],eps,n,sampleSize)[0]
-                normalizedEntropyField[i,j] = recurrenceEntropy(field[:,i,j],eps,n,sampleSize)[1]
-    # This returns 2 numbers: [entropy, normalized entropy]
-    return [entropyField,normalizedEntropyField]
-
-# Function to compute the recurrence entropy over an entire field
-# This one is coded in order to test differences in results giving a different epsilon
-# It compute epsilon as a percentage of the max diameter of the time series
-# and it takes as input the percentage
-def recurrenceEntropyFieldPercentMaxDiameter(field,percentage,n,sampleSize):
-
-    # Dimensions of the field?
-    # Time dimension
-    dimTime = np.shape(field)[0]
-    # Number of points in latitude (y-axis)
-    dimLat = np.shape(field)[1]
-    # Number of points in longitude (x-axis)
-    dimLon = np.shape(field)[2]
-
-    # Initialize the entropy field
-    entropyField = np.zeros([dimLat,dimLon])
-    normalizedEntropyField = np.zeros([dimLat,dimLon])
-
-    for i in range(0,dimLat):
-        for j in range(0,dimLon):
-            # Check if is a masked value
-            if np.isnan(field[0,i,j]):
-                entropyField[i,j] = field[0,i,j] # if it is mask just return the mask
-            else:
-                # Compute epsilon as x percentage of standard dev of the time series
-                diameter = np.abs(np.max(field[:,i,j]) - np.min(field[:,i,j]))
-                eps = percentage * diameter
-                entropyField[i,j] = recurrenceEntropy(field[:,i,j],eps,n,sampleSize)[0]
-                normalizedEntropyField[i,j] = recurrenceEntropy(field[:,i,j],eps,n,sampleSize)[1]
-    # This returns 2 numbers: [entropy, normalized entropy]
-    return [entropyField,normalizedEntropyField]
-'''
