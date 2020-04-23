@@ -32,8 +32,7 @@ def recurrencePlot(timeSeries, eps):
     recurrenceMatrix = binaryD.reshape((dimT, dimT))
     return recurrenceMatrix
 
-# Function to compute the recurrence entropy
-
+# (Slow) Function to compute the recurrence entropy
 
 def recurrenceEntropy(timeSeries, eps,n,sampleSize):
     # Construct the recurrence plot
@@ -125,7 +124,7 @@ def recurrenceEntropyField(field,epsilonField,n,sampleSize):
             if np.isnan(field[0,i,j]):
                 entropyField[i,j] = field[0,i,j] # if it is mask just return the mask
             else:
-                entropyField[i,j] = recurrenceEntropy(field[:,i,j],epsilonField[i,j],n,sampleSize)[0]
+                entropyField[i,j] = recurrenceEntropyFAST(field[:,i,j],epsilonField[i,j],n,sampleSize)
 
     return entropyField
 
