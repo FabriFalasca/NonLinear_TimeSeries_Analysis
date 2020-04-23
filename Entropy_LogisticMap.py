@@ -14,8 +14,6 @@ Created on Tue Nov 12 17:10:06 2019
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import signal
-# The libraries below are borrowed from here http://schubert.atmos.colostate.edu/~cslocum/netcdf_example.html
-from netCDF4 import Dataset  # http://code.google.com/p/netcdf4-python/
 import functions_RecPlots
 import itertools
 from sklearn.feature_extraction import image
@@ -39,10 +37,6 @@ def logMap(r,x0,n):
         y[i+1] = r * y[i] * (1 - y[i])
 
     return y
-
-# If you want to test how fast it is the computation
-import time
-start_time = time.time()
 
 epsilon = 0.13
 entropy = np.array([], float)
@@ -69,11 +63,8 @@ for i in np.arange(3.50,4.0001,0.001):
     computedEntropy = functions_RecPlots.recurrenceEntropyFAST(time_series, epsilon,n,sampleSize)
     entropy = np.append(entropy, computedEntropy)
 
-# If you want to print the time
-#print("--- %s seconds ---" % (time.time() - start_time))
-
 # To save
-#np.savetxt('/Users/fabrizio/Dropbox/PHD/Phd/Project/CODES_and_Ideas/NonLinear_TS_Analysis/RecurrenceEntropy/my_newCode_recurrence_Entropy/Test_On_LogMap/Faster_Code/entropy.txt', entropy, fmt = '%1.6f')
+#np.savetxt('/Users/fabrizio/entropy.txt', entropy, fmt = '%1.6f')
 
 # want to rapidly plot something?
 def plotFig(x):
