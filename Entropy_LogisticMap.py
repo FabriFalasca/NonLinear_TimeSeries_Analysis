@@ -54,8 +54,7 @@ for i in np.arange(3.50,4.0001,0.001):
     time_series = time_seriesWithT[1001:] # Transient removed (transient considered as the first 1000 points)
 
     #  Settings for the recurrence plot
-    #epsilon = 0.1  * std  # Treshold defined as 5% of the standard deviation of the time series
-    # N?
+    # Dimension of a microstate
     n = 4
     # How many samples?
     sampleSize = 1000
