@@ -5,4 +5,4 @@ In the script Entropy_LogisticMap.py I test this entropy quantifier on the Logis
 
 The code has been used for our study on detection of (regional) dynamical transitions in spatiotemporal climate fields. 
 Spatiotemporal complexity and time-dependent networks in sea surface temperature from mid- to late Holocene,
-by Fabrizio Falasca, Julien Crétat, Pascale Braconnot, Annalisa Bracco. In press.
+by Fabrizio Falasca, Julien Crétat, Pascale Braconnot, Annalisa Bracco. Accepted by the Euopean Physical Journal Plus. In press.
