@@ -3,10 +3,12 @@
     # (2) Recurrence Entropy defined from the probability of
     #     occurence of microstates of size n by n in the
     #     recurrence plot
+    # (3) A faster recurrence entropy quantifier (the one we use)
 
-# functions to create recurrence plot
+# Author: Fabrizio Falasca
+# Email: fabrifalasca@gmail.com
+
 import numpy as np
-#import matplotlib.pyplot as plt
 from scipy import signal, spatial
 from scipy.spatial.distance import pdist,cdist, squareform
 from sklearn.feature_extraction import image
@@ -61,7 +63,7 @@ def recurrenceEntropy(timeSeries, eps,n,sampleSize):
 
 
 
-# (Fast) Function to compute the recurrence entropy in a faster way
+# Function to compute the recurrence entropy in a faster way
 # Instead of computing the RP, I compute directly the microstates.
 def recurrenceEntropyFAST(timeSeries, eps,n,sampleSize):
     # dimension of a microstate: n^2
@@ -102,8 +104,8 @@ def recurrenceEntropyFAST(timeSeries, eps,n,sampleSize):
     return normalizedEntropy
 
 # Function to compute the recurrence entropy over an entire field
-# This one is coded in order to test differences in results giving a different epsilon
-# Epsilon is already computed
+# the epsilonField is contains a value of epsilon for each point
+# of the spatial grid.
 def recurrenceEntropyField(field,epsilonField,n,sampleSize):
 
     # Dimensions of the field?
