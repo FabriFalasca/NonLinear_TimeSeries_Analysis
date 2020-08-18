@@ -11,3 +11,6 @@ The code has been updated following the paper https://aip.scitation.org/doi/pdf/
 The new entropy quantifier proposed is defined as the maximum entropy computable from a RP. It shows extremely
 well correlation witht he maximum Lyapunov exponent of the time series. A big plus: it is parameter free.
 This page will be updated soon with the new code. If needed, contact Fabrizio Falasca at fabrifalasca@gmail.com
+
+
+Note: In a moment of crazyness I added a license to this code. If this is against someone's religion, please le me know.
