@@ -1,4 +1,4 @@
-# NonLinear_TimeSeries_Analysis
+# Entropy for time series
 
 Codes to compute a recurrence plot (RP) (see http://www.recurrence-plot.tk/) and the entropy quantifier based on microstates in a RP (https://aip.scitation.org/doi/10.1063/1.5042026).
 In the script Entropy_LogisticMap.py I test this entropy quantifier on the Logistic map.
