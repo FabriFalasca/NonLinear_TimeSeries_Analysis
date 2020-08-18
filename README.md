@@ -1,6 +1,7 @@
 # Entropy for time series
 
 Code to compute the entropy of a time series based on the maximum entropy principle as proposed by Prado et al. (2019) in https://aip.scitation.org/doi/pdf/10.1063/1.5125921 
+We found this entropy quantifier useful when dealing with ~10^4 (or more) time series as it has been shown to give qualitatively good results even without state space reconstruction (see F. Takens, Detecting strange attractors in turbulence (Springer, Berlin, 1981), pp. 366–381). 
 
 In test.ipynb we show how to use the code in the context of Logistic map.
 
