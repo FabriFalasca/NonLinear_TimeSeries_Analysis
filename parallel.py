@@ -13,8 +13,10 @@ import multiprocessing
 
 # *************************** Parameters **********************************
 
-# If you want to use all cores (this is in case you want them all (64 here))
+# If you want to use all cores 
 #num_cores = multiprocessing.cpu_count()
+
+# In case you want to specify the number of cores
 num_cores = 60
 # Dimension of a microstate
 n = 4
