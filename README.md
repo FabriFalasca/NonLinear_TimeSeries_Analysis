@@ -5,7 +5,7 @@ We found this entropy quantifier useful when dealing with ~10^4 (or more) time s
 
 In test.ipynb we provide an example using the Logistic map. Our computation uses a simple heuristic to speed up the algorithm and based on the observation that the entropy dependence on the parameter epsilon (i.e., threshold distance of the recurrence plot) does not change significantly for sample sizes of 1000 or 10000 microstates. We leverage this observation by testing the entropy dependence on epsilon using a sample of 1000 microstates. Once the optimal epsilon is chosen, we compute the final entropy using a sample size of 10000 microstastes for which the entropy converges.
 
-In parallel.py we give a parallelized version of the code (using https://joblib.readthedocs.io/en/latest/). This is to be preferred if dealing with spatiotemporal datasets.
+In parallel.py we give a parallelized version of the code (using https://joblib.readthedocs.io/en/latest/). This is to be preferred when dealing with spatiotemporal datasets.
 
 An application of this kind of entropy quantifiers can be found here:
 
