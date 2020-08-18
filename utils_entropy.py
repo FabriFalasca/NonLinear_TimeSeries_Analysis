@@ -1,5 +1,5 @@
 # Functions for computations of
-    # (1) Function for computing the entropy of a time series
+    # (1) Recurrence-based entropy of a time series
     # (4) Maximum entropy principle S_max: this is the entropy
     #     quantifier we want to use
     # (5) Compute S_max for all grid points in a spatiotemporal grid
