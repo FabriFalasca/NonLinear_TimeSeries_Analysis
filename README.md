@@ -13,4 +13,3 @@ well correlation witht he maximum Lyapunov exponent of the time series. A big pl
 This page will be updated soon with the new code. If needed, contact Fabrizio Falasca at fabrifalasca@gmail.com
 
 
-Note: In a moment of crazyness I added a license to this code. If this is against someone's religion, please le me know.
