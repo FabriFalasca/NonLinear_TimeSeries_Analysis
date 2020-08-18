@@ -9,7 +9,7 @@ In parallel.py we give a parallelized version of the code (using https://joblib.
 
 An application of this kind of entropy quantifiers can be found here:
 
-Falasca, F., Crétat, J., Braconnot, P. et al. Spatiotemporal complexity and time-dependent networks in sea surface temperature from mid- to late Holocene. Eur. Phys. J. Plus 135, 392 (2020). https://doi.org/10.1140/epjp/s13360-020-00403-x
+Falasca, F., Crétat, J., Braconnot, P. and Bracco, A. Spatiotemporal complexity and time-dependent networks in sea surface temperature from mid- to late Holocene. Eur. Phys. J. Plus 135, 392 (2020). https://doi.org/10.1140/epjp/s13360-020-00403-x
 
 Contacts: Fabrizio Falasca (fabrifalasca@gmail.com)
 
