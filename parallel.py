@@ -30,8 +30,6 @@ path_nc_file = '../sst_a.nc'
 
 # *************************************************************************
 
-# OK. Let's now do the same test for a more realistic, noisy time series and see if
-# what we see above still holds.
 # We need to import the nc files to define the longitudes and latitudes
 
 # Function to import netcdf datasets
