@@ -1,5 +1,5 @@
 # Functions for computations of
-    # (1) Recurrence-based entropy of a time series
+    # (1) Function for computing the entropy of a time series
     # (4) Maximum entropy principle S_max: this is the entropy
     #     quantifier we want to use
     # (5) Compute S_max for all grid points in a spatiotemporal grid
@@ -31,6 +31,11 @@ def recurrenceEntropy(timeSeries, eps,n,sampleSize):
     if np.isnan(timeSeries[0]):
 
         normalizedEntropy = np.nan
+    
+    # If the values are not nan BUT the time series have std = 0 give 0
+    elif ~np.isnan(timeSeries[0]) and np.std(timeSeries) == 0:
+
+        normalizedEntropy = 0
 
     else:
 
