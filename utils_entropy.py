@@ -26,14 +26,19 @@ def recurrenceEntropy(timeSeries, eps,n,sampleSize):
     dimT = len(timeSeries)
     # Initialize microstates
     micro = np.array([], float)
-
-    # If the values are nan give a nan back
-    if np.isnan(timeSeries[0]):
+    
+    # If there is even just 1 nan, return a nan
+    if np.isnan(np.sum(timeSeries)):
 
         normalizedEntropy = np.nan
     
-    # If the values are not nan BUT the time series have std = 0 give 0
-    elif ~np.isnan(timeSeries[0]) and np.std(timeSeries) == 0:
+    # If all entries are zeros give a zero back
+    elif np.count_nonzero(timeSeries) == 0:
+        
+        normalizedEntropy = 0
+    
+    # If the time series have std = 0 give 0
+    elif np.std(timeSeries) == 0:
 
         normalizedEntropy = 0
 
