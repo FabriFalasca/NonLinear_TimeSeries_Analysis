@@ -93,8 +93,8 @@ def s_max(timeSeries, n, sampleSize_h, sampleSize):
         entropy_ts_h = np.append(entropy_ts_h,recurrenceEntropy(timeSeries, epsilons[i],n,sampleSize_h))
 
     # Find the epsilon that maximize the entropy
-    #eps = epsilons[entropy_ts_h == np.max(entropy_ts_h)][0]
-    eps = epsilons[entropy_ts_h == np.max(entropy_ts_h)]
+    eps = epsilons[entropy_ts_h == np.max(entropy_ts_h)][0]
+    #eps = epsilons[entropy_ts_h == np.max(entropy_ts_h)]
 
     # Use this epsilon to compute the final entropy
     final_entropy = recurrenceEntropy(timeSeries, eps,n,sampleSize)
