@@ -17,7 +17,7 @@ import random
 
 # Function to compute the recurrence entropy in a faster way
 # Instead of computing the RP, I compute directly the microstates.
-# (Better to use when for long timeseries)
+# (Better to use with timeseries)
 def recurrenceEntropy(timeSeries, eps,n,sampleSize):
     # dimension of a microstate: n^2
     # Consider all Patches of dimension n^2
